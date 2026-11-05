@@ -21,6 +21,17 @@ Paste the result into a plain-text file named `archive.b64`.
 
 ## Recover the original file
 
+On Windows 10 with MinGW/Git Bash, copy the Base64 text from Chrome, then run:
+
+```sh
+bash clipboard_to_zip.sh
+```
+
+The script reads the Windows clipboard directly through PowerShell, avoiding
+slow terminal pasting. It saves to `%USERPROFILE%\Downloads\recovered.zip`
+and replaces that file if it already exists. Empty or invalid Base64 input
+produces an error before the output file is written.
+
 On Ubuntu/Linux:
 
 ```sh
